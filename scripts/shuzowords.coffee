@@ -83,5 +83,5 @@ words = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /^(疲れた|疲れ|つかれた|つかれ)/i, (msg) ->
+  robot.hear /疲れた|疲れ|つかれた|つかれ/i, (msg) ->
     msg.send msd.random words
