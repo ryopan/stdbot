@@ -41,4 +41,5 @@ words = [
 
 module.exports = (robot) ->
   robot.hear /つかれた|疲れ/, (msg) ->
-  msg.send "msg.random words"
+  shuzo = msg.random words
+  msg.send "shuzo"
