@@ -1,3 +1,5 @@
+module.exports = (robot) ->
+
 words = [
   "http://37.media.tumblr.com/6ecdbb327dd232eb564fe4250a5a3fd4/tumblr_n7ltynJY161r3rdh2o1_500.gif",
   "http://37.media.tumblr.com/08ade75c57c1bfca733990a429991fba/tumblr_n7n5dugT6p1r3fop8o1_500.gif",
