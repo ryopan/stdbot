@@ -6,6 +6,6 @@ module.exports = (robot) ->
   , null, true, "Asia/Tokyo"
   
   module.exports = (robot) ->
-  new cron '30 03 20 * * 1-5', () =>
+  new cron '00 05 20 * * 1-5', () =>
     robot.send {room: "#std-morning"}, "修造が今日のいい言葉をお送りします"
   , null, true, "Asia/Tokyo"
