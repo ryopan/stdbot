@@ -142,7 +142,7 @@ module.exports = (robot) ->
     msg.send "#{shuzo}"
     
 module.exports = (robot) ->
-  new cron '00 37 10 * * 1-5', () =>
+  new cron '00 40 10 * * 1-5', () =>
     shuzo = msg.random words
     robot.send {room: "#std-morning"}, "#{shuzo}"
   , null, true, "Asia/Tokyo"
