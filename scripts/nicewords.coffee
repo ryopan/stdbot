@@ -1,3 +1,5 @@
+cron = require('cron').CronJob
+
 words = [
  "``` 	劇的に優れたプロダクトを生み出すのに必要なのは巨大な組織ではなく、数えきれないほどの試行錯誤を繰り返すことだ	```	How Google Works	",
 "``` 	あらゆる可能性にオープンだ。自由に他者と協力し、アイデアや分析をそれを誰が口にしたかではなく、それ自体の質にもとづいて評価する	```	How Google Works	",
@@ -138,3 +140,9 @@ module.exports = (robot) ->
   robot.hear /(いい言葉)/i, (msg) ->
     shuzo = msg.random words
     msg.send "#{shuzo}"
+    
+module.exports = (robot) ->
+  new cron '00 37 10 * * 1-5', () =>
+    shuzo = msg.random words
+    robot.send {room: "#std-morning"}, "#{shuzo}"
+  , null, true, "Asia/Tokyo"
