@@ -36,6 +36,9 @@
     "hubot-slack": "~3.3.0",
     "hubot": "~2.12.0",
     "cron": "~1.0.9"
+    "xml2json": "~0.6.0",
+    "async": "~0.7.0",
+    "date-utils": "~1.2.15"
   },
   "engines": {
     "node": "0.10.x"
