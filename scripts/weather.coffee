@@ -10,7 +10,7 @@ module.exports = (robot) ->
       else
         day = 3
         break
-    request = msg.http('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010')
+    request = msg.http('http://weather.livedoor.com/forecast/webservice/json/v1?city=400040')
     .get()
     request (err, res, body) ->
       json = JSON.parse body
