@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Language" content="en">
     
     
-    <title>hubot-yahoo-amagumo/amagumo.coffee at master · asmz/hubot-yahoo-amagumo</title>
+    <title>hubot-weather-ja/weather-ja.coffee at master · ryurock/hubot-weather-ja</title>
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
@@ -18,12 +18,12 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
     <meta property="fb:app_id" content="1401488693436528">
 
-      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="asmz/hubot-yahoo-amagumo" name="twitter:title" /><meta content="hubot-yahoo-amagumo - A hubot script return Yahoo Rain-cloud(Amagumo) Radar infomation." name="twitter:description" /><meta content="https://avatars0.githubusercontent.com/u/8692333?v=3&amp;s=400" name="twitter:image:src" />
-      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars0.githubusercontent.com/u/8692333?v=3&amp;s=400" property="og:image" /><meta content="asmz/hubot-yahoo-amagumo" property="og:title" /><meta content="https://github.com/asmz/hubot-yahoo-amagumo" property="og:url" /><meta content="hubot-yahoo-amagumo - A hubot script return Yahoo Rain-cloud(Amagumo) Radar infomation." property="og:description" />
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="ryurock/hubot-weather-ja" name="twitter:title" /><meta content="hubot-weather-ja - hubot scripts weather information from weather.livedoor.com" name="twitter:description" /><meta content="https://avatars0.githubusercontent.com/u/1619084?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars0.githubusercontent.com/u/1619084?v=3&amp;s=400" property="og:image" /><meta content="ryurock/hubot-weather-ja" property="og:title" /><meta content="https://github.com/ryurock/hubot-weather-ja" property="og:url" /><meta content="hubot-weather-ja - hubot scripts weather information from weather.livedoor.com" property="og:description" />
       <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/NjkyNTg4MzpmMjkyOTg5YWJhYjI0YjQyMmUyYjA4NGI1MWNiYzE3MTo4OTE0N2MxMThlOTJmM2QwMDFjMTA1NTdiMWJkYTcxNTZjMWE3Y2E1YjBjMjI4MTc4YjcwOTlhYjQzZmQ4ZjUw--3d0b87982fcd61baad44eb0bfc3dbd95ea86e526">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/NjkyNTg4MzpmMjkyOTg5YWJhYjI0YjQyMmUyYjA4NGI1MWNiYzE3MTo2YTdmZjE0NTg4NDk3ZjFkNmEzOTY3MTAyNjk0ZGIzNTAwMjViOTk0NDI3MTVhM2NkYTljOGFiMDQ2NTkxN2Ew--5c18340283c52ce968daa5d301382aeb96eaff41">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
 
@@ -32,7 +32,7 @@
     <meta name="selected-link" value="repo_source" data-pjax-transient>
       <meta name="google-analytics" content="UA-3769691-2">
 
-    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="3C2D45CF:7356:A8B346:55823F85" name="octolytics-dimension-request_id" /><meta content="6925883" name="octolytics-actor-id" /><meta content="ryopan" name="octolytics-actor-login" /><meta content="b9706fed26651e83afdd4e448ec875cf4d8ebcd3ad1df868265f3b1c67235b9c" name="octolytics-actor-hash" />
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="3C2D45CF:3EFE:671323:5582400E" name="octolytics-dimension-request_id" /><meta content="6925883" name="octolytics-actor-id" /><meta content="ryopan" name="octolytics-actor-login" /><meta content="b9706fed26651e83afdd4e448ec875cf4d8ebcd3ad1df868265f3b1c67235b9c" name="octolytics-actor-hash" />
     
     <meta content="Rails, view, blob#show" name="analytics-event" />
     <meta class="js-ga-set" name="dimension1" content="Logged In">
@@ -46,7 +46,7 @@
 
 
     <meta content="authenticity_token" name="csrf-param" />
-<meta content="NWS9d6RTiK54HVhbn2p+m8TEL1QV+frnweIuGjrR2XInTJwicMMaDDpwfyIyyK9+7VzNYvVqPhfdrpkBn8Cmqg==" name="csrf-token" />
+<meta content="vTxSS+Nbp1cy2o7cRVJBKSLpiPhwTMw4qtY28HXEogk/lzOcDSRk1HEvwPsjMFtJM5Xp6c54SBcB8ZUDKQ6hpQ==" name="csrf-token" />
 
     <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-f7c9dec0fe8f88d1ae00035e973f4102ed2166b1e269f3333f92c91413d85670.css" media="all" rel="stylesheet" />
     <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2/index-0d569068eabc0305b93b246950eb913fc9d2948b952824895172164835b351dd.css" media="all" rel="stylesheet" />
@@ -57,11 +57,11 @@
     <meta http-equiv="x-pjax-version" content="c24a01908c443388f88adc6a07627a49">
 
       
-  <meta name="description" content="hubot-yahoo-amagumo - A hubot script return Yahoo Rain-cloud(Amagumo) Radar infomation.">
-  <meta name="go-import" content="github.com/asmz/hubot-yahoo-amagumo git https://github.com/asmz/hubot-yahoo-amagumo.git">
+  <meta name="description" content="hubot-weather-ja - hubot scripts weather information from weather.livedoor.com">
+  <meta name="go-import" content="github.com/ryurock/hubot-weather-ja git https://github.com/ryurock/hubot-weather-ja.git">
 
-  <meta content="8692333" name="octolytics-dimension-user_id" /><meta content="asmz" name="octolytics-dimension-user_login" /><meta content="25101669" name="octolytics-dimension-repository_id" /><meta content="asmz/hubot-yahoo-amagumo" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="25101669" name="octolytics-dimension-repository_network_root_id" /><meta content="asmz/hubot-yahoo-amagumo" name="octolytics-dimension-repository_network_root_nwo" />
-  <link href="https://github.com/asmz/hubot-yahoo-amagumo/commits/master.atom" rel="alternate" title="Recent Commits to hubot-yahoo-amagumo:master" type="application/atom+xml">
+  <meta content="1619084" name="octolytics-dimension-user_id" /><meta content="ryurock" name="octolytics-dimension-user_login" /><meta content="18823028" name="octolytics-dimension-repository_id" /><meta content="ryurock/hubot-weather-ja" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="18823028" name="octolytics-dimension-repository_network_root_id" /><meta content="ryurock/hubot-weather-ja" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/ryurock/hubot-weather-ja/commits/master.atom" rel="alternate" title="Recent Commits to hubot-weather-ja:master" type="application/atom+xml">
 
   </head>
 
@@ -83,7 +83,7 @@
 
 
       <div class="site-search repo-scope js-site-search" role="search">
-          <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/asmz/hubot-yahoo-amagumo/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+          <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/ryurock/hubot-weather-ja/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
   <label class="js-chromeless-input-container form-control">
     <div class="scope-badge">This repository</div>
     <input type="text"
@@ -150,9 +150,9 @@
 
   <div class="dropdown-divider"></div>
   <div class="dropdown-header">
-    <span title="asmz/hubot-yahoo-amagumo">This repository</span>
+    <span title="ryurock/hubot-weather-ja">This repository</span>
   </div>
-    <a class="dropdown-item" href="/asmz/hubot-yahoo-amagumo/issues/new" data-ga-click="Header, create new issue">
+    <a class="dropdown-item" href="/ryurock/hubot-weather-ja/issues/new" data-ga-click="Header, create new issue">
       New issue
     </a>
 
@@ -194,7 +194,7 @@
           Settings
         </a>
 
-        <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="FB878rG/pBi/t6SWbhs1ImcM16gUJyUb1mSto6gv1KNycuvEcZ4ENI5s6tKF8CQeumopzlm8V1pZ9fTd8v9gQw==" /></div>
+        <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="SBPDXX+ZlVCITWvXIdEhtrLUTRm3Faah5GdV4t3DKnoJ1VgITKk9SokulCTQBrzHTq6gWxiaivcSpRwSys1fTQ==" /></div>
           <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -225,10 +225,10 @@
 <ul class="pagehead-actions">
 
   <li>
-      <form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="M7eeW+dzr/9mUvhsNCxumGgxYoYFhig0Hp3dKtgnUJzt/JWQk/wSxZEnubrFHYRbYpTQ2slHJM/8WGr5qrYXng==" /></div>    <input id="repository_id" name="repository_id" type="hidden" value="25101669" />
+      <form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nJzV+veDiic34A+IBZVJstsGW8m+a6uiJhbPc20HDOwuMnzCVkQyfPHRNqzYZ9zSe4HdXWD6FmXJ6i782P7qzQ==" /></div>    <input id="repository_id" name="repository_id" type="hidden" value="18823028" />
 
       <div class="select-menu js-menu-container js-select-menu">
-        <a href="/asmz/hubot-yahoo-amagumo/subscription"
+        <a href="/ryurock/hubot-weather-ja/subscription"
           class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true"
           data-ga-click="Repository, click Watch settings, action:blob#show">
           <span class="js-select-button">
@@ -236,8 +236,8 @@
             Watch
           </span>
         </a>
-        <a class="social-count js-social-count" href="/asmz/hubot-yahoo-amagumo/watchers">
-          1
+        <a class="social-count js-social-count" href="/ryurock/hubot-weather-ja/watchers">
+          2
         </a>
 
         <div class="select-menu-modal-holder">
@@ -300,27 +300,27 @@
     
   <div class="js-toggler-container js-social-container starring-container ">
 
-    <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/unstar" class="js-toggler-form starred js-unstar-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="RFr1yEksHLaMXjISAxd2u0Wbt5KzXRywtN+yLFsfASOOxoW4bvWh2SRD7brqnhTEtzKGYvhIZStn5BH5pTyiNA==" /></div>
+    <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/unstar" class="js-toggler-form starred js-unstar-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="sAk9/LBH8aDuJae5X18a4prbUTU7KaeiFEViU4RGfe2WxNHr4gw/3Gb3Jh08MK4FycsmgMolPTCgYcMLSz57/w==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Unstar this repository" title="Unstar asmz/hubot-yahoo-amagumo"
+        aria-label="Unstar this repository" title="Unstar ryurock/hubot-weather-ja"
         data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
         <span class="octicon octicon-star"></span>
         Unstar
       </button>
-        <a class="social-count js-social-count" href="/asmz/hubot-yahoo-amagumo/stargazers">
+        <a class="social-count js-social-count" href="/ryurock/hubot-weather-ja/stargazers">
           7
         </a>
 </form>
-    <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/star" class="js-toggler-form unstarred js-star-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="6fhPjqthjMCL7/sDciqJgmclYozk1zu5En/kQqK7trZhKyoUXa53RnM9am5fbpURcz23H2bpEzH3Z3v4UUAAxQ==" /></div>
+    <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/star" class="js-toggler-form unstarred js-star-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="H8n1MgI+IBHapzZvCXXNQwEIA3tE59pc6IlEaaao/erWFpw5ef1+qOVYeLti4gl/SIrtNqIOuzzMcUw1DiLZQg==" /></div>
       <button
         class="btn btn-sm btn-with-count js-toggler-target"
-        aria-label="Star this repository" title="Star asmz/hubot-yahoo-amagumo"
+        aria-label="Star this repository" title="Star ryurock/hubot-weather-ja"
         data-ga-click="Repository, click star button, action:blob#show; text:Star">
         <span class="octicon octicon-star"></span>
         Star
       </button>
-        <a class="social-count js-social-count" href="/asmz/hubot-yahoo-amagumo/stargazers">
+        <a class="social-count js-social-count" href="/ryurock/hubot-weather-ja/stargazers">
           7
         </a>
 </form>  </div>
@@ -328,26 +328,26 @@
   </li>
 
         <li>
-          <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/fork" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fLDx3ZvhMHn8p/Ub8Uu0QSAbzzYcK7U9pidJB/bDdOLXU+GmvWxFGcfgeZgyuOvpTaLCJMQQ8fqT3Epp8SHuKg==" /></div>
+          <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/fork" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="GA+wjamAUaih1AY8kbWrEAGu2unfhZAwrAPcwEnXKRunk15kxR2JGpQBnmCmAKQ27ZiyXH//PZWqNUMIkvX5yg==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
                 data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
-                title="Fork your own copy of asmz/hubot-yahoo-amagumo to your account"
-                aria-label="Fork your own copy of asmz/hubot-yahoo-amagumo to your account">
+                title="Fork your own copy of ryurock/hubot-weather-ja to your account"
+                aria-label="Fork your own copy of ryurock/hubot-weather-ja to your account">
               <span class="octicon octicon-repo-forked"></span>
               Fork
             </button>
-            <a href="/asmz/hubot-yahoo-amagumo/network" class="social-count">2</a>
+            <a href="/ryurock/hubot-weather-ja/network" class="social-count">4</a>
 </form>        </li>
 
 </ul>
 
         <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
           <span class="mega-octicon octicon-repo"></span>
-          <span class="author"><a href="/asmz" class="url fn" itemprop="url" rel="author"><span itemprop="title">asmz</span></a></span><!--
+          <span class="author"><a href="/ryurock" class="url fn" itemprop="url" rel="author"><span itemprop="title">ryurock</span></a></span><!--
        --><span class="path-divider">/</span><!--
-       --><strong><a href="/asmz/hubot-yahoo-amagumo" data-pjax="#js-repo-pjax-container">hubot-yahoo-amagumo</a></strong>
+       --><strong><a href="/ryurock/hubot-weather-ja" data-pjax="#js-repo-pjax-container">hubot-weather-ja</a></strong>
 
           <span class="page-context-loader">
             <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
@@ -364,30 +364,30 @@
 <nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
      role="navigation"
      data-pjax="#js-repo-pjax-container"
-     data-issue-count-url="/asmz/hubot-yahoo-amagumo/issues/counts">
+     data-issue-count-url="/ryurock/hubot-weather-ja/issues/counts">
   <ul class="sunken-menu-group">
     <li class="tooltipped tooltipped-w" aria-label="Code">
-      <a href="/asmz/hubot-yahoo-amagumo" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /asmz/hubot-yahoo-amagumo">
+      <a href="/ryurock/hubot-weather-ja" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /ryurock/hubot-weather-ja">
         <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
         <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>    </li>
 
       <li class="tooltipped tooltipped-w" aria-label="Issues">
-        <a href="/asmz/hubot-yahoo-amagumo/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /asmz/hubot-yahoo-amagumo/issues">
+        <a href="/ryurock/hubot-weather-ja/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /ryurock/hubot-weather-ja/issues">
           <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
           <span class="js-issue-replace-counter"></span>
           <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>      </li>
 
     <li class="tooltipped tooltipped-w" aria-label="Pull requests">
-      <a href="/asmz/hubot-yahoo-amagumo/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /asmz/hubot-yahoo-amagumo/pulls">
+      <a href="/ryurock/hubot-weather-ja/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /ryurock/hubot-weather-ja/pulls">
           <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
           <span class="js-pull-replace-counter"></span>
           <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>    </li>
 
       <li class="tooltipped tooltipped-w" aria-label="Wiki">
-        <a href="/asmz/hubot-yahoo-amagumo/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /asmz/hubot-yahoo-amagumo/wiki">
+        <a href="/ryurock/hubot-weather-ja/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /ryurock/hubot-weather-ja/wiki">
           <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
           <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>      </li>
@@ -396,13 +396,13 @@
   <ul class="sunken-menu-group">
 
     <li class="tooltipped tooltipped-w" aria-label="Pulse">
-      <a href="/asmz/hubot-yahoo-amagumo/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /asmz/hubot-yahoo-amagumo/pulse">
+      <a href="/ryurock/hubot-weather-ja/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /ryurock/hubot-weather-ja/pulse">
         <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
         <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>    </li>
 
     <li class="tooltipped tooltipped-w" aria-label="Graphs">
-      <a href="/asmz/hubot-yahoo-amagumo/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /asmz/hubot-yahoo-amagumo/graphs">
+      <a href="/ryurock/hubot-weather-ja/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /ryurock/hubot-weather-ja/graphs">
         <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
         <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
 </a>    </li>
@@ -418,7 +418,7 @@
   <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
   <div class="input-group js-zeroclipboard-container">
     <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
-           value="https://github.com/asmz/hubot-yahoo-amagumo.git" readonly="readonly">
+           value="https://github.com/ryurock/hubot-weather-ja.git" readonly="readonly">
     <span class="input-group-button">
       <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
     </span>
@@ -431,7 +431,7 @@
   <h3><span class="text-emphasized">SSH</span> clone URL</h3>
   <div class="input-group js-zeroclipboard-container">
     <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
-           value="git@github.com:asmz/hubot-yahoo-amagumo.git" readonly="readonly">
+           value="git@github.com:ryurock/hubot-weather-ja.git" readonly="readonly">
     <span class="input-group-button">
       <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
     </span>
@@ -444,7 +444,7 @@
   <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
   <div class="input-group js-zeroclipboard-container">
     <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
-           value="https://github.com/asmz/hubot-yahoo-amagumo" readonly="readonly">
+           value="https://github.com/ryurock/hubot-weather-ja" readonly="readonly">
     <span class="input-group-button">
       <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
     </span>
@@ -454,23 +454,23 @@
 
 
 <div class="clone-options">You can clone with
-  <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/Z4KwUA3I5FzCuJ3xdKyYTvFgLCNSJ2v91hdJH5L2FVfqcGlS+vNSIbJ648l7+ce22lkaFPLmf1/ONqaDGn7hw==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form>, <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="b8PqvCv+H4iihXhrwg7CeVSnxhrAv1kmOKwfPHLGdI6Le0mB4ZHpWymjcPTaDbPqetHjGEHKutXVvdQJ0jkiLg==" /></div><button class="btn-link js-clone-selector" data-protocol="ssh" type="submit">SSH</button></form>, or <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4HRn9xSeKT+BWpzOON92eh1mlC/PbYVuD8cYVmwIWJ2oAJoalopGiJE019bxuUfcg69mbmcdYf4tQcfpKcwleg==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
+  <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="jchiUlm0D4029HU4LMpl8ayFr2+6WeCXe8yd9m6OqJsxleI5GRx0sv/li/+P1HwNf3TpVq6YWXAofY2voeU0aA==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form>, <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fWRL8mahy3PlAf5xtxqR7uX0C6MkBUlcu33Q/31tNVPDQ9QzJWOQ/Dr1iV8grkqv8Isw/T/qKxizlEoevaq11Q==" /></div><button class="btn-link js-clone-selector" data-protocol="ssh" type="submit">SSH</button></form>, or <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form is-enabled" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xhErHACCoGbIhaMxjH2V0mQVCKgqxQ0Eexe6BXaur9/eQEayLtM1SeuG93seULtLlmv8jNupeBW8SOr6mvgW6A==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
   <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
     <span class="octicon octicon-question"></span>
   </a>
 </div>
 
-  <a href="github-mac://openRepo/https://github.com/asmz/hubot-yahoo-amagumo" class="btn btn-sm sidebar-button" title="Save asmz/hubot-yahoo-amagumo to your computer and use it in GitHub Desktop." aria-label="Save asmz/hubot-yahoo-amagumo to your computer and use it in GitHub Desktop.">
+  <a href="github-mac://openRepo/https://github.com/ryurock/hubot-weather-ja" class="btn btn-sm sidebar-button" title="Save ryurock/hubot-weather-ja to your computer and use it in GitHub Desktop." aria-label="Save ryurock/hubot-weather-ja to your computer and use it in GitHub Desktop.">
     <span class="octicon octicon-device-desktop"></span>
     Clone in Desktop
   </a>
 
 
 
-                <a href="/asmz/hubot-yahoo-amagumo/archive/master.zip"
+                <a href="/ryurock/hubot-weather-ja/archive/master.zip"
                    class="btn btn-sm sidebar-button"
-                   aria-label="Download the contents of asmz/hubot-yahoo-amagumo as a zip file"
-                   title="Download the contents of asmz/hubot-yahoo-amagumo as a zip file"
+                   aria-label="Download the contents of ryurock/hubot-weather-ja as a zip file"
+                   title="Download the contents of ryurock/hubot-weather-ja as a zip file"
                    rel="nofollow">
                   <span class="octicon octicon-cloud-download"></span>
                   Download ZIP
@@ -482,9 +482,9 @@
 
           
 
-<a href="/asmz/hubot-yahoo-amagumo/blob/2c60e73247f74551f805e0339d9542a6c4b335a9/scripts/amagumo.coffee" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/ryurock/hubot-weather-ja/blob/654a5bf810549360588e20b49b3ab45ee8c0456b/scripts/weather-ja.coffee" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:10b920364b6d1b21ee639185bab21bff -->
+<!-- blob contrib key: blob_contributors:v21:460384c774c5108955ce7371b5682b2d -->
 
 <div class="file-navigation js-zeroclipboard-container">
   
@@ -528,7 +528,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/asmz/hubot-yahoo-amagumo/blob/master/scripts/amagumo.coffee"
+               href="/ryurock/hubot-weather-ja/blob/master/scripts/weather-ja.coffee"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -556,7 +556,7 @@
 </div>
 
   <div class="btn-group right">
-    <a href="/asmz/hubot-yahoo-amagumo/find/master"
+    <a href="/ryurock/hubot-weather-ja/find/master"
           class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s"
           data-pjax
           data-hotkey="t"
@@ -567,73 +567,52 @@
   </div>
 
   <div class="breadcrumb js-zeroclipboard-target">
-    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/asmz/hubot-yahoo-amagumo" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">hubot-yahoo-amagumo</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/asmz/hubot-yahoo-amagumo/tree/master/scripts" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">scripts</span></a></span><span class="separator">/</span><strong class="final-path">amagumo.coffee</strong>
+    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/ryurock/hubot-weather-ja" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">hubot-weather-ja</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/ryurock/hubot-weather-ja/tree/master/scripts" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">scripts</span></a></span><span class="separator">/</span><strong class="final-path">weather-ja.coffee</strong>
   </div>
 </div>
 
-
-  <div class="commit file-history-tease">
-    <div class="file-history-tease-header">
-        <img alt="@asmz" class="avatar" height="24" src="https://avatars1.githubusercontent.com/u/8692333?v=3&amp;s=48" width="24" />
-        <span class="author"><a href="/asmz" rel="author">asmz</a></span>
-        <time datetime="2014-10-21T01:38:49Z" is="relative-time">Oct 21, 2014</time>
-        <div class="commit-title">
-            <a href="/asmz/hubot-yahoo-amagumo/commit/3dd8ffd72de6d292eab1f60eeb3dfb0bc30d0fc7" class="message" data-pjax="true" title="Yahoo API parameter adjustment and refactoring">Yahoo API parameter adjustment and refactoring</a>
-        </div>
-    </div>
-
-    <div class="participation">
-      <p class="quickstat">
-        <a href="#blob_contributors_box" rel="facebox">
-          <strong>1</strong>
-           contributor
-        </a>
-      </p>
-      
-    </div>
-    <div id="blob_contributors_box" style="display:none">
-      <h2 class="facebox-header">Users who have contributed to this file</h2>
-      <ul class="facebox-user-list">
-          <li class="facebox-user-list-item">
-            <img alt="@asmz" height="24" src="https://avatars1.githubusercontent.com/u/8692333?v=3&amp;s=48" width="24" />
-            <a href="/asmz">asmz</a>
-          </li>
-      </ul>
-    </div>
+<include-fragment class="commit commit-loader file-history-tease" src="/ryurock/hubot-weather-ja/contributors/master/scripts/weather-ja.coffee">
+  <div class="file-history-tease-header">
+    Fetching contributors&hellip;
   </div>
 
+  <div class="participation">
+    <p class="loader-loading"><img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /></p>
+    <p class="loader-error">Cannot retrieve contributors at this time</p>
+  </div>
+</include-fragment>
 <div class="file">
   <div class="file-header">
     <div class="file-actions">
 
       <div class="btn-group">
-        <a href="/asmz/hubot-yahoo-amagumo/raw/master/scripts/amagumo.coffee" class="btn btn-sm " id="raw-url">Raw</a>
-          <a href="/asmz/hubot-yahoo-amagumo/blame/master/scripts/amagumo.coffee" class="btn btn-sm js-update-url-with-hash">Blame</a>
-        <a href="/asmz/hubot-yahoo-amagumo/commits/master/scripts/amagumo.coffee" class="btn btn-sm " rel="nofollow">History</a>
+        <a href="/ryurock/hubot-weather-ja/raw/master/scripts/weather-ja.coffee" class="btn btn-sm " id="raw-url">Raw</a>
+          <a href="/ryurock/hubot-weather-ja/blame/master/scripts/weather-ja.coffee" class="btn btn-sm js-update-url-with-hash">Blame</a>
+        <a href="/ryurock/hubot-weather-ja/commits/master/scripts/weather-ja.coffee" class="btn btn-sm " rel="nofollow">History</a>
       </div>
 
         <a class="octicon-btn tooltipped tooltipped-nw"
-           href="github-mac://openRepo/https://github.com/asmz/hubot-yahoo-amagumo?branch=master&amp;filepath=scripts%2Famagumo.coffee"
+           href="github-mac://openRepo/https://github.com/ryurock/hubot-weather-ja?branch=master&amp;filepath=scripts%2Fweather-ja.coffee"
            aria-label="Open this file in GitHub for Mac"
            data-ga-click="Repository, open with desktop, type:mac">
             <span class="octicon octicon-device-desktop"></span>
         </a>
 
-            <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/edit/master/scripts/amagumo.coffee" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="srFoleWYSc552a1ky9mih4/VfEQG6TZqctOFRfn3EdB7y+joJ+cLP3EFCZX35o4ZSUVLJhr5R9PNoFb1jHiEeg==" /></div>
+            <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/edit/master/scripts/weather-ja.coffee" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XCpZ43f+VqlYMHDccbUvjHcdI4wSk4EpfulYqZMuKaV4VHbbLV7IjQs5ziYDcwmJpukSLuq4/VxzaaaGXo1/WA==" /></div>
               <button class="octicon-btn tooltipped tooltipped-n" type="submit" aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
                 <span class="octicon octicon-pencil"></span>
               </button>
 </form>
-          <form accept-charset="UTF-8" action="/asmz/hubot-yahoo-amagumo/delete/master/scripts/amagumo.coffee" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="hNYS7UStJgF/nS+inhf9a2K1HASxajHu9m8DKmEo+e6/bHhtSDc+w3NryZqV+kTtDp2aR9/nEZc7LP03hEBBew==" /></div>
+          <form accept-charset="UTF-8" action="/ryurock/hubot-weather-ja/delete/master/scripts/weather-ja.coffee" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="CscHWpfNzd/Nok9RHlNWHrLVZlvfoO5U3vQ7L+DUF2YYQfTjg3Hdh4c40Dwph6sdAkH3BVHLf9Qy3tgDyNZ6xg==" /></div>
             <button class="octicon-btn octicon-btn-danger tooltipped tooltipped-n" type="submit" aria-label="Fork this project and delete this file" data-disable-with>
               <span class="octicon octicon-trashcan"></span>
             </button>
 </form>    </div>
 
     <div class="file-info">
-        56 lines (46 sloc)
+        57 lines (51 sloc)
         <span class="file-info-divider"></span>
-      1.824 kB
+      1.711 kB
     </div>
   </div>
   
@@ -645,7 +624,7 @@
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   A hubot script return Yahoo Rain-cloud(Amagumo) Radar infomation.</span></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   Returns weather information from weather.livedoor.com</span></td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
@@ -653,220 +632,220 @@
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Commands:</span></td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#</span></td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   hubot amagumo me &lt;area&gt; - Returns a Yahoo Rain-Cloud(Amagumo) Rader map view of &lt;area&gt;</span></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Commands:</span></td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   hubot amagumo zoom me &lt;area&gt; - Returns a zoom Rader map view of &lt;area&gt;</span></td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   hubot 天気 &lt;地名&gt; - 天気予報情報を返します</span></td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   hubot amagumo japan - Returns a Rader map view of the whole japan area</span></td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#</span></td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#</span></td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Author:</span></td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Author:</span></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   ryurock</span></td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c">#   asmz</span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-v"><span class="pl-v">parser <span class="pl-k">=</span></span></span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>xml2json<span class="pl-pds">&#39;</span></span>)</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-en">module.exports </span><span class="pl-k">=</span><span class="pl-smi"> <span class="pl-smi">(robot)</span></span> <span class="pl-k"><span class="pl-k">-&gt;</span></span></td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-v"><span class="pl-v">async <span class="pl-k">=</span></span></span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>async<span class="pl-pds">&#39;</span></span>)</td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>date-utils<span class="pl-pds">&#39;</span></span>)</td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">unless</span> <span class="pl-c1">process</span>.env.HUBOT_YAHOO_AMAGUMO_APP_ID<span class="pl-k">?</span></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line">    robot.logger.warning <span class="pl-s"><span class="pl-pds">&#39;</span>Required HUBOT_YAHOO_AMAGUMO_APP_ID environment.<span class="pl-pds">&#39;</span></span></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-v"><span class="pl-v">weathearList <span class="pl-k">=</span></span></span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>../config/weather_area_list.json<span class="pl-pds">&#39;</span></span>)</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-en">module.exports </span><span class="pl-k">=</span><span class="pl-smi"> <span class="pl-smi">(robot)</span></span> <span class="pl-k"><span class="pl-k">-&gt;</span></span></td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">  <span class="pl-v"><span class="pl-v">width <span class="pl-k">=</span></span></span> <span class="pl-c1">process</span>.env.HUBOT_YAHOO_AMAGUMO_WIDTH <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">&quot;</span>500<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">  robot.respond <span class="pl-sr"><span class="pl-pds">/</span>天気<span class="pl-c1">\s</span><span class="pl-k">*</span>(<span class="pl-c1">.</span><span class="pl-k">*</span>)<span class="pl-k">?</span><span class="pl-k">$</span><span class="pl-pds">/</span>i</span>, <span class="pl-smi">(msg)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line">  <span class="pl-v"><span class="pl-v">height <span class="pl-k">=</span></span></span> <span class="pl-c1">process</span>.env.HUBOT_YAHOO_AMAGUMO_HEIGHT <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">&quot;</span>500<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-v"><span class="pl-v">place  <span class="pl-k">=</span></span></span> <span class="pl-s"><span class="pl-pds">&#39;</span>東京<span class="pl-pds">&#39;</span></span></td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-v"><span class="pl-v">place  <span class="pl-k">=</span></span></span> msg.match[<span class="pl-c1">1</span>] <span class="pl-k">if</span> msg.match[<span class="pl-c1">1</span>]<span class="pl-k">?</span></td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line">  robot.respond <span class="pl-sr"><span class="pl-pds">/</span>amagumo japan<span class="pl-pds">/</span>i</span>, <span class="pl-smi">(msg)</span> <span class="pl-k">-&gt;</span></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line">    msg.send getAmagumoRaderUrl <span class="pl-s"><span class="pl-pds">&quot;</span>37.9072841<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>137.1255805<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>6<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>500<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>500<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">    async.waterfall([</td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">      <span class="pl-smi">(callback)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">  robot.respond <span class="pl-sr"><span class="pl-pds">/</span>amagumo( zoom)<span class="pl-k">?</span> me (<span class="pl-c1">.</span><span class="pl-k">+</span>)<span class="pl-pds">/</span>i</span>, <span class="pl-smi">(msg)</span> <span class="pl-k">-&gt;</span></td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">        weathearList.<span class="pl-c1">some</span>(<span class="pl-smi">(v,i)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-v"><span class="pl-v">zoom <span class="pl-k">=</span></span></span> <span class="pl-k">if</span> msg.match[<span class="pl-c1">1</span>] <span class="pl-k">then</span> <span class="pl-s"><span class="pl-pds">&quot;</span>14<span class="pl-pds">&quot;</span></span> <span class="pl-k">else</span> <span class="pl-s"><span class="pl-pds">&quot;</span>12<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">if</span> v.city <span class="pl-k">instanceof</span> <span class="pl-c1">Array</span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-v"><span class="pl-v">area <span class="pl-k">=</span></span></span> msg.match[<span class="pl-c1">2</span>]</td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">            v.city.<span class="pl-c1">some</span>(<span class="pl-smi">(data, j)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">              <span class="pl-k">if</span> data.title <span class="pl-k">==</span> place</td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line">    msg.http(<span class="pl-s"><span class="pl-pds">&#39;</span>http://geo.search.olp.yahooapis.jp/OpenLocalPlatform/V1/geoCoder<span class="pl-pds">&#39;</span></span>)</td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">                callback(<span class="pl-c1">null</span>, data)</td>
       </tr>
       <tr>
         <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line">      .query({</td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">return</span> <span class="pl-c1">true</span></td>
       </tr>
       <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">appid:</span></span> <span class="pl-c1">process</span>.env.HUBOT_YAHOO_AMAGUMO_APP_ID</td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line">            )</td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">query:</span></span> area</td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">else</span></td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">results:</span></span> <span class="pl-c1">1</span></td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> v.city.title <span class="pl-k">==</span> place</td>
       </tr>
       <tr>
         <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">output:</span></span> <span class="pl-s"><span class="pl-pds">&#39;</span>json<span class="pl-pds">&#39;</span></span></td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line">              callback(<span class="pl-c1">null</span>, v.city)</td>
       </tr>
       <tr>
         <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line">      })  </td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">              <span class="pl-k">return</span> <span class="pl-c1">true</span></td>
       </tr>
       <tr>
         <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">      .get() <span class="pl-smi">(err, res, body)</span> <span class="pl-k">-&gt;</span></td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">        )</td>
       </tr>
       <tr>
         <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">geoinfo <span class="pl-k">=</span></span></span> JSON.parse(body)</td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line">      , <span class="pl-smi">(areaData, callback)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">unless</span> geoinfo.Feature<span class="pl-k">?</span></td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"># livedoor 天気予報APIのバグ arealistのIDが5桁のものは0パディングしないといけない</span></td>
       </tr>
       <tr>
         <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">          msg.send <span class="pl-s"><span class="pl-pds">&quot;</span>Not match <span class="pl-cce">\&quot;</span><span class="pl-s1"><span class="pl-pse">#{</span>area<span class="pl-pse">}</span></span><span class="pl-cce">\&quot;</span><span class="pl-pds">&quot;</span></span></td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">areaId <span class="pl-k">=</span></span></span>  (<span class="pl-s"><span class="pl-pds">&quot;</span>0<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> areaData.id).<span class="pl-c1">slice</span>(<span class="pl-k">-</span><span class="pl-c1">6</span>)</td>
       </tr>
       <tr>
         <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">          <span class="pl-k">return</span></td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line">        msg</td>
       </tr>
       <tr>
         <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line">          .http(<span class="pl-s"><span class="pl-pds">&#39;</span>http://weather.livedoor.com/forecast/webservice/json/v1<span class="pl-pds">&#39;</span></span>)</td>
       </tr>
       <tr>
         <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">coordinates <span class="pl-k">=</span></span></span> (geoinfo.Feature[<span class="pl-c1">0</span>].Geometry.Coordinates).split(<span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)</td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line">          .query(<span class="pl-v"><span class="pl-v">city :</span></span> areaId)</td>
       </tr>
       <tr>
         <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">lon <span class="pl-k">=</span></span></span> coordinates[<span class="pl-c1">0</span>]</td>
+        <td id="LC42" class="blob-code blob-code-inner js-file-line">          .get() <span class="pl-smi">(err, res, body)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line">        <span class="pl-v"><span class="pl-v">lat <span class="pl-k">=</span></span></span> coordinates[<span class="pl-c1">1</span>]</td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line">            <span class="pl-v"><span class="pl-v">json <span class="pl-k">=</span></span></span> JSON.parse(body)</td>
       </tr>
       <tr>
         <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC44" class="blob-code blob-code-inner js-file-line">            callback(<span class="pl-c1">null</span>, json)</td>
       </tr>
       <tr>
         <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">        msg.send getAmagumoRaderUrl lat, lon, zoom, width, height</td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line">    ], <span class="pl-smi">(err, result)</span> <span class="pl-k">-&gt;</span></td>
       </tr>
       <tr>
         <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-en">Error</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>err catched.<span class="pl-pds">&#39;</span></span>) <span class="pl-k">if</span> err</td>
       </tr>
       <tr>
         <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line"><span class="pl-en">getAmagumoRaderUrl </span><span class="pl-k">=</span><span class="pl-smi"> <span class="pl-smi">(lat, lon, zoom, width, height)</span></span> <span class="pl-k"><span class="pl-k">-&gt;</span></span></td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line">      <span class="pl-v"><span class="pl-v">forecastTime <span class="pl-k">=</span></span></span> <span class="pl-k">new</span> <span class="pl-en">Date</span>(result.publicTime)</td>
       </tr>
       <tr>
         <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line">  <span class="pl-v"><span class="pl-v">url <span class="pl-k">=</span></span></span> <span class="pl-s"><span class="pl-pds">&quot;</span>http://map.olp.yahooapis.jp/OpenLocalPlatform/V1/static?appid=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">      <span class="pl-v"><span class="pl-v">text <span class="pl-k">=</span></span></span> <span class="pl-s"><span class="pl-pds">&quot;</span>【お天気情報 <span class="pl-s1"><span class="pl-pse">#{</span>place<span class="pl-pse">}</span></span>】<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
       </tr>
       <tr>
         <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line">         <span class="pl-c1">process</span>.env.HUBOT_YAHOO_AMAGUMO_APP_ID <span class="pl-k">+</span></td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line">      <span class="pl-s"><span class="pl-pds">&quot;</span>■  <span class="pl-s1"><span class="pl-pse">#{</span>forecastTime.toFormat(<span class="pl-s"><span class="pl-pds">&quot;</span>YYYY年MM月DD日HH24時MI分<span class="pl-pds">&quot;</span></span>)<span class="pl-pse">}</span></span>の予報です<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
       </tr>
       <tr>
         <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;lat=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> lat <span class="pl-k">+</span></td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line">      <span class="pl-s"><span class="pl-pds">&quot;</span>予報 : <span class="pl-s1"><span class="pl-pse">#{</span>result.forecasts[<span class="pl-c1">0</span>].telop<span class="pl-pse">}</span></span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
       </tr>
       <tr>
         <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;lon=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> lon <span class="pl-k">+</span></td>
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">      <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-s1"><span class="pl-pse">#{</span>result.description.text<span class="pl-pse">}</span></span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
       </tr>
       <tr>
         <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;z=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> zoom <span class="pl-k">+</span></td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line">      <span class="pl-s"><span class="pl-pds">&quot;</span>詳しい情報は下記を参照<span class="pl-cce">\n\n</span><span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span></td>
       </tr>
       <tr>
         <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;width=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> width <span class="pl-k">+</span></td>
+        <td id="LC53" class="blob-code blob-code-inner js-file-line">      <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-s1"><span class="pl-pse">#{</span>result.link<span class="pl-pse">}</span></span><span class="pl-pds">&quot;</span></span></td>
       </tr>
       <tr>
         <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
-        <td id="LC54" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;height=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> height <span class="pl-k">+</span></td>
+        <td id="LC54" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
-        <td id="LC55" class="blob-code blob-code-inner js-file-line">        <span class="pl-s"><span class="pl-pds">&quot;</span>&amp;overlay=<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">&quot;</span>type:rainfall<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC55" class="blob-code blob-code-inner js-file-line">      msg.send text</td>
+      </tr>
+      <tr>
+        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="LC56" class="blob-code blob-code-inner js-file-line">    )</td>
       </tr>
 </table>
 
@@ -908,7 +887,7 @@
       <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2015 <span title="0.05652s from github-fe136-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2015 <span title="0.06607s from github-fe116-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
