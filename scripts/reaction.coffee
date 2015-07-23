@@ -11,4 +11,4 @@ module.exports = (robot) ->
   robot.respond /@shuzobot/i, (msg) ->
     shuzo = msg.random words
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
-    msg.send "@#{msg.message.user.name}  #{shuzo}"
+    msg.reply "@#{msg.message.user.name}  #{shuzo}"
