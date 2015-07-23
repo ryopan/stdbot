@@ -9,6 +9,6 @@ lunch = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /ランチ/i, (msg) ->
+  robot.hear /ランチ/i, (msg) ->
     shuzo = msg.random lunch
     msg.reply "#{shuzo}"
