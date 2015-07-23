@@ -28,7 +28,15 @@ words = [
 "http://i.imgur.com/MKv11Sv.gif",
 "http://i.imgur.com/TlXAEau.gif",
 "http://i.imgur.com/DJhcfgK.gif",
+"http://i.imgur.com/0bYMbDa.gif",
+"http://i.imgur.com/IM0cQLd.gif",
+"http://i.imgur.com/Vutj8wl.gif",
 "そんな大人、修造してやる！",
+"今日はもう帰ろう、な？",
+"あとでテニスコート裏集合な",
+"今を生きろ！",
+"君は今、泣いていい！",
+"弱い、弱いよ〜〜〜〜〜",
 "世界が許しても俺が許さねぇ！"
 ]
 
