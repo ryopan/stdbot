@@ -8,7 +8,7 @@ words = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /@shuzobot/i, (msg) ->
+  robot.respond /@shuzobot/i, (msg) ->
     shuzo = msg.random words
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.send "@#{msg.message.user.name}  #{shuzo}"
