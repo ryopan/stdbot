@@ -21,8 +21,11 @@ words = [
 "俺は諦めないぞ！",
 "打ち上げろ！",
 "いくぞーーーーー！",
-"http://i.imgur.com/vP59PMI.gif?#{timestamp}",
-"そんな大人、修造してやる！"
+"http://i.imgur.com/vP59PMI.gif",
+"http://i.imgur.com/EOEmhPi.gif",
+"http://i.imgur.com/0cQgMv7.gif",
+"そんな大人、修造してやる！",
+"世界が許しても俺が許さねぇ！"
 ]
 
 module.exports = (robot) ->
