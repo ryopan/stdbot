@@ -41,7 +41,7 @@ words = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /@shuzobot/i, (msg) ->
+  robot.hear /@shuzobot/i, (msg) ->
     shuzo = msg.random words
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.reply "#{shuzo}"
