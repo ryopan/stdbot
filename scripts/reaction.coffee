@@ -21,7 +21,8 @@ words = [
 "俺は諦めないぞ！",
 "打ち上げろ！",
 "いくぞーーーーー！",
-"http://i.imgur.com/vP59PMI.gif?#{timestamp}"
+"http://i.imgur.com/vP59PMI.gif?#{timestamp}",
+"そんな大人、修造してやる！"
 ]
 
 module.exports = (robot) ->
