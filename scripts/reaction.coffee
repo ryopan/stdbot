@@ -1,5 +1,3 @@
-cron = require('cron').CronJob
-
 words = [
  "そんなことよりテニスだ！",
 "もっと熱くなれよ！",
