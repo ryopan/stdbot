@@ -50,6 +50,6 @@ lunch = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /(lunch|昼飯|ランチ)/i, (msg) ->
+  robot.respond /(lunch|昼飯|お昼|昼ごはん|ランチ)/i, (msg) ->
     shuzo = msg.random lunch
-    msg.send "#{shuzo}"
+    msg.send "今日は〜〜〜〜〜〜〜〜〜〜〜\r\n\r\n\r\nここっ！\r\n#{shuzo}"
