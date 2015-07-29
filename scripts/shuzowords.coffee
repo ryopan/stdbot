@@ -33,7 +33,7 @@ words = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /(つかれた|疲れた|つかれ|疲れ|励まして|熱くなって)/i, (msg) ->
+  robot.hear /(つかれた|疲れた|励まして|熱くなって)/i, (msg) ->
     shuzo = msg.random words
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.reply "http://i.imgur.com/Rorwm3M.jpg?#{timestamp}  #{shuzo}"
