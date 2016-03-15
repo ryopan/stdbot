@@ -42,6 +42,6 @@
   },
   "engines": {
     "node": "0.10.x",
-    "node-trello": "~1.2"
+    "node-trello": "1.1.2"
   }
 }
