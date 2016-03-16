@@ -35,6 +35,22 @@ checkEnv = (logger) ->
   return false if not (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
   return true
 
+# Select cards by open now
+selectCardsByOpenNow = (cards) ->
+  selectedCards = []
+  for card in cards
+    open = card.desc.match(/open\s(\d+):(\d+)/)
+    opentime = if open then ("0" + open[1]).slice(-2) + ("0" + open[2]).slice(-2) else "0000"
+    
+    close = card.desc.match(/close\s(\d+):(\d+)/)
+    closetime = if close then ("0" + close[1]).slice(-2) + ("0" + close[2]).slice(-2) else "2359"
+    
+    now = new Date
+    nowtime = ("0" + now.getHours()).slice(-2) + ("0" + now.getMinutes()).slice(-2)
+    
+    selectedCards.push(card) if opentime <= nowtime && nowtime < closetime
+  return selectedCards
+
 # Select cards specified by label
 selectCardsByLabel = (cards, label) ->
   selectedCards = []
@@ -67,6 +83,13 @@ module.exports = (robot) ->
       if cards.length == 0
         msg.send "今ランチやってるお店はないなぁ〜"
         return
+
+      # Get attachments
+      trello.get "/1/cards/#{card.id}/attachments", {cards: "open"}, (err, attachments) ->
+        if err
+          msg.send "あ、今ちょっとTrelloエラー"
+          return
+        imageUrl = if attachments.length > 0 then (msg.random attachments).url else ""
 
         answer = "こことかどうかな〜？"
         answer += "\n#{card.name} - #{card.shortUrl}"
