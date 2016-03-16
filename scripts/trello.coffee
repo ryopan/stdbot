@@ -84,7 +84,7 @@ module.exports = (robot) ->
         msg.send "今ランチやってるお店はないなぁ〜"
         return
 
-      card = cards
+      card = msg.random cards
 
       # Get attachments
       trello.get "/1/cards/#{card.id}/attachments", {cards: "open"}, (err, attachments) ->
