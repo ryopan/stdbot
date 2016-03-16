@@ -84,14 +84,14 @@ module.exports = (robot) ->
         msg.send "今ランチやってるお店はないなぁ〜"
         return
 
-      card = msg.random cards
+      card = msg.send cards
 
       # Get attachments
       trello.get "/1/cards/#{card.id}/attachments", {cards: "open"}, (err, attachments) ->
         if err
           msg.send "あ、今ちょっとTrelloエラー"
           return
-        imageUrl = if attachments.length > 0 then (msg.random attachments).url else ""
+        imageUrl = if attachments.length > 0 then (msg.send).url else ""
 
         answer = "こことかどうかな〜？"
         answer += "\n#{card.name} - #{card.shortUrl}"
