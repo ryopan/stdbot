@@ -93,4 +93,6 @@ module.exports = (robot) ->
 
         answer = "こことかどうかな〜？"
         answer += "\n#{card.name} - #{card.shortUrl}"
+        answer += "\n#{card.desc}" if card.desc
+        answer += "\n#{imageUrl}" if imageUrl
         msg.send answer
