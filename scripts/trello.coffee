@@ -35,30 +35,6 @@ checkEnv = (logger) ->
   return false if not (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
   return true
 
-# Select cards by open now
-selectCardsByOpenNow = (cards) ->
-  selectedCards = []
-  for card in cards
-    open = card.desc.match(/open\s(\d+):(\d+)/)
-    opentime = if open then ("0" + open[1]).slice(-2) + ("0" + open[2]).slice(-2) else "0000"
-    
-    close = card.desc.match(/close\s(\d+):(\d+)/)
-    closetime = if close then ("0" + close[1]).slice(-2) + ("0" + close[2]).slice(-2) else "2359"
-    
-    now = new Date
-    nowtime = ("0" + now.getHours()).slice(-2) + ("0" + now.getMinutes()).slice(-2)
-    
-    selectedCards.push(card) if opentime <= nowtime && nowtime < closetime
-  return selectedCards
-
-# Select cards specified by label
-selectCardsByLabel = (cards, label) ->
-  selectedCards = []
-  for card in cards
-    for cLabel in card.labels
-      selectedCards.push(card) if cLabel.name == label
-  return selectedCards
-
 # hubot main
 module.exports = (robot) ->
   return if !checkEnv robot.logger
