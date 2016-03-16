@@ -87,7 +87,7 @@ module.exports = (robot) ->
 
     createCard msg, list_name, card_name
 
-  robot.respond /trello list ["“'‘](.+)["”'’]/i, (msg) ->
+  robot.respond /trello list (.+)/i, (msg) ->
     showCards msg, msg.match[1]
 
   robot.respond /trello move (\w+) ["“'‘](.+)["”'’]/i, (msg) ->
