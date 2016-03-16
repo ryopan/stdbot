@@ -1,98 +1,100 @@
 # Description:
-#   Manage your Trello Board from Hubot!
+#   A hubot script return an open lunch shop now from trello cards.
 #
+# Requirement:
+#   Required following environment variable.
+#    export HUBOT_TRELLO_API_KEY=<trello_api_key>
+#    export HUBOT_TRELLO_API_TOKEN=<trello_api_token>
+#    export HUBOT_TRELLO_BOARD=<trello_board_id(for lunch)>
+# 
 # Dependencies:
-#   "node-trello": "latest"
+#   node-trello (https://github.com/adunkman/node-trello)
 #
-# Configuration:
-#   HUBOT_TRELLO_API_KEY - Trello application key
-#   HUBOT_TRELLO_API_TOKEN - Trello API token
-#   HUBOT_TRELLO_BOARD - The ID of the Trello board you will be working with
+#   Add to your package.json dependencies, and run `npm install`
+#     ex) 
+#       "dependencies": {
+#           ...
+#           "node-trello": "*",
+#           ...
+#       },
 #
 # Commands:
-#   hubot trello new "<list>" <name> - Create a new Trello card in the list
-#   hubot trello list "<list>" - Show cards on list
-#   hubot trello move <shortLink> "<list>" - Move a card to a different list
-#
+#   hubot lunch me - Return an open lunch shop now from trello cards
+#   hubot lunch me <label> - Return an open lunch shop from trello cards specified by label
 #
 # Author:
-#   jared barboza <jared.m.barboza@gmail.com>
-
-board = {}
-lists = {}
+#   asmz
 
 Trello = require 'node-trello'
 
-trello = new Trello process.env.HUBOT_TRELLO_API_KEY, process.env.HUBOT_TRELLO_API_TOKEN
+# Check environment variables
+checkEnv = (logger) ->
+  logger.warning 'Required HUBOT_TRELLO_API_KEY environment.' if not process.env.HUBOT_TRELLO_API_KEY
+  logger.warning 'Required HUBOT_TRELLO_API_TOKEN environment.' if not process.env.HUBOT_TRELLO_API_TOKEN
+  logger.warning 'Required HUBOT_TRELLO_BOARD environment.' if not process.env.HUBOT_TRELLO_BOARD
+  return false if not (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
+  return true
 
-# verify that all the environment vars are available
-ensureConfig = (out) ->
-  out "Error: Trello app key is not specified" if not process.env.HUBOT_TRELLO_API_KEY
-  out "Error: Trello token is not specified" if not process.env.HUBOT_TRELLO_API_TOKEN
-  out "Error: Trello board ID is not specified" if not process.env.HUBOT_TRELLO_BOARD
-  return false unless (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
-  true
+# Select cards by open now
+selectCardsByOpenNow = (cards) ->
+  selectedCards = []
+  for card in cards
+    open = card.desc.match(/open\s(\d+):(\d+)/)
+    opentime = if open then ("0" + open[1]).slice(-2) + ("0" + open[2]).slice(-2) else "0000"
+    
+    close = card.desc.match(/close\s(\d+):(\d+)/)
+    closetime = if close then ("0" + close[1]).slice(-2) + ("0" + close[2]).slice(-2) else "2359"
+    
+    now = new Date
+    nowtime = ("0" + now.getHours()).slice(-2) + ("0" + now.getMinutes()).slice(-2)
+    
+    selectedCards.push(card) if opentime <= nowtime && nowtime < closetime
+  return selectedCards
 
-##############################
-# API Methods
-##############################
+# Select cards specified by label
+selectCardsByLabel = (cards, label) ->
+  selectedCards = []
+  for card in cards
+    for cLabel in card.labels
+      selectedCards.push(card) if cLabel.name == label
+  return selectedCards
 
-createCard = (msg, list_name, cardName) ->
-  msg.reply "Sure thing boss. I'll create that card for you."
-  ensureConfig msg.send
-  id = lists[list_name.toLowerCase()].id
-  trello.post "/1/cards", {name: cardName, idList: id}, (err, data) ->
-    msg.reply "There was an error creating the card" if err
-    msg.reply "OK, I created that card for you. You can see it here: #{data.url}" unless err
-
-showCards = (msg, list_name) ->
-  msg.reply "Looking up the cards for #{list_name}, one sec."
-  ensureConfig msg.send
-  id = lists[list_name.toLowerCase()].id
-  msg.send "I couldn't find a list named: #{list_name}." unless id
-  if id
-    trello.get "/1/lists/#{id}", {cards: "open"}, (err, data) ->
-      msg.reply "There was an error showing the list." if err
-      msg.reply "Here are all the cards in #{data.name}:" unless err and data.cards.length == 0
-      msg.send "* [#{card.shortLink}] #{card.name} - #{card.shortUrl}" for card in data.cards unless err and data.cards.length == 0
-      msg.reply "No cards are currently in the #{data.name} list." if data.cards.length == 0 and !err
-
-moveCard = (msg, card_id, list_name) ->
-  ensureConfig msg.send
-  id = lists[list_name.toLowerCase()].id
-  msg.reply "I couldn't find a list named: #{list_name}." unless id
-  if id
-    trello.put "/1/cards/#{card_id}/idList", {value: id}, (err, data) ->
-      msg.reply "Sorry boss, I couldn't move that card after all." if err
-      msg.reply "Yep, ok, I moved that card to #{list_name}." unless err
-
+# hubot main
 module.exports = (robot) ->
-  # fetch our board data when the script is loaded
-  ensureConfig console.log
-  trello.get "/1/boards/#{process.env.HUBOT_TRELLO_BOARD}", (err, data) ->
-    board = data
-    trello.get "/1/boards/#{process.env.HUBOT_TRELLO_BOARD}/lists", (err, data) ->
-      for list in data
-        lists[list.name.toLowerCase()] = list
+  return if !checkEnv robot.logger
 
-  robot.respond /trello new ["'](.+)["']\s(.*)/i, (msg) ->
-    ensureConfig msg.send
-    card_name = msg.match[2]
-    list_name = msg.match[1]
+  trello = new Trello process.env.HUBOT_TRELLO_API_KEY, process.env.HUBOT_TRELLO_API_TOKEN
 
-    if card_name.length == 0
-      msg.reply "You must give the card a name"
-      return
+  robot.respond /lunch me ?(.+)?/i, (msg) ->
+    label = msg.match[1]
 
-    if list_name.length == 0
-      msg.reply "You must give a list name"
-      return
-    return unless ensureConfig()
+    # Get trello cards
+    trello.get "/1/boards/#{process.env.HUBOT_TRELLO_BOARD}", {cards: "open"}, (err, data) ->
+      if err
+        msg.send "あ、今ちょっとTrelloエラー"
+        return
 
-    createCard msg, list_name, card_name
+      # Select cards by open now
+      cards = selectCardsByOpenNow data.cards
 
-  robot.respond /trello list ["'](.+)["']/i, (msg) ->
-    showCards msg, msg.match[1]
+      # Select cards specified by label
+      cards = selectCardsByLabel cards, label if label
 
-  robot.respond /trello move (\w+) ["'](.+)["']/i, (msg) ->
-    moveCard msg, msg.match[1], msg.match[2]
+      if cards.length == 0
+        msg.send "今ランチやってるお店はないなぁ〜"
+        return
+
+      card = msg.random cards
+
+      # Get attachments
+      trello.get "/1/cards/#{card.id}/attachments", {cards: "open"}, (err, attachments) ->
+        if err
+          msg.send "あ、今ちょっとTrelloエラー"
+          return
+        imageUrl = if attachments.length > 0 then (msg.random attachments).url else ""
+
+        answer = "こことかどうかな〜？"
+        answer += "\n#{card.name} - #{card.shortUrl}"
+        answer += "\n#{card.desc}" if card.desc
+        answer += "\n#{imageUrl}" if imageUrl
+        msg.send answer
