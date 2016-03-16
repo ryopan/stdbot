@@ -48,7 +48,7 @@ showCards = (msg, list_name) ->
   if id
     trello.get "/1/lists/#{id}", {cards: "open"}, (err, data) ->
       msg.reply "There was an error showing the list." if err
-      msg.reply "#{data.name}のカードだ！しっかり確認してくれ！ #{list.shortUrl}" unless err and data.cards.length == 0
+      msg.reply "#{data.name}のカードだ！しっかり確認してくれ！ #{board.shortUrl}" unless err and data.cards.length == 0
       msg.send "*#{card.name} - #{card.shortUrl}" for card in data.cards unless err and data.cards.length == 0
       msg.reply "No cards are currently in the #{data.name} list." if data.cards.length == 0 and !err
 
