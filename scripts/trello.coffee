@@ -5,8 +5,8 @@
 #   "node-trello": "latest"
 #
 # Configuration:
-#   HUBOT_TRELLO_KEY - Trello application key
-#   HUBOT_TRELLO_TOKEN - Trello API token
+#   HUBOT_TRELLO_API_KEY - Trello application key
+#   HUBOT_TRELLO_API_TOKEN - Trello API token
 #   HUBOT_TRELLO_BOARD - The ID of the Trello board you will be working with
 #
 # Commands:
@@ -23,14 +23,14 @@ lists = {}
 
 Trello = require 'node-trello'
 
-trello = new Trello process.env.HUBOT_TRELLO_KEY, process.env.HUBOT_TRELLO_TOKEN
+trello = new Trello process.env.HUBOT_TRELLO_API_KEY, process.env.HUBOT_TRELLO_API_TOKEN
 
 # verify that all the environment vars are available
 ensureConfig = (out) ->
-  out "Error: Trello app key is not specified" if not process.env.HUBOT_TRELLO_KEY
-  out "Error: Trello token is not specified" if not process.env.HUBOT_TRELLO_TOKEN
+  out "Error: Trello app key is not specified" if not process.env.HUBOT_TRELLO_API_KEY
+  out "Error: Trello token is not specified" if not process.env.HUBOT_TRELLO_API_TOKEN
   out "Error: Trello board ID is not specified" if not process.env.HUBOT_TRELLO_BOARD
-  return false unless (process.env.HUBOT_TRELLO_KEY and process.env.HUBOT_TRELLO_TOKEN and process.env.HUBOT_TRELLO_BOARD)
+  return false unless (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
   true
 
 ##############################
