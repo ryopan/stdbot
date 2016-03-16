@@ -97,7 +97,7 @@ module.exports = (robot) ->
     else if !trelloboard
       msg.reply "You have no trelloboard"
     else
-      t.get "/1/lists/#{trellolist}/cards", (err, data) ->
+      t.get "GET /1/lists/#{trellolist}", (err, data) ->
         msg.send list.name for list in data
 
 
