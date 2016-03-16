@@ -42,14 +42,13 @@ createCard = (msg, list_name, cardName) ->
     msg.reply "OK, I created that card for you. You can see it here: #{data.url}" unless err
 
 showCards = (msg, list_name) ->
-  msg.reply "#{list_name}のカードだ！しっかり確認してくれ！."
   ensureConfig msg.send
   id = lists[list_name.toLowerCase()].id
   msg.send "I couldn't find a list named: #{list_name}." unless id
   if id
     trello.get "/1/lists/#{id}", {cards: "open"}, (err, data) ->
       msg.reply "There was an error showing the list." if err
-      msg.reply "Here are all the cards in #{data.name}:" unless err and data.cards.length == 0
+      msg.reply "#{data.name}のカードだ！しっかり確認してくれ！" unless err and data.cards.length == 0
       msg.send "* [#{card.shortLink}] #{card.name} - #{card.shortUrl}" for card in data.cards unless err and data.cards.length == 0
       msg.reply "No cards are currently in the #{data.name} list." if data.cards.length == 0 and !err
 
