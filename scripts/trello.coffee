@@ -1,136 +1,98 @@
 # Description:
-#   Add entries to trello directly from hubot
+#   Manage your Trello Board from Hubot!
 #
 # Dependencies:
-#   "node-trello": "0.1.2"
+#   "node-trello": "latest"
 #
 # Configuration:
-#   HUBOT_TRELLO_KEY - your trello developer key
+#   HUBOT_TRELLO_KEY - Trello application key
+#   HUBOT_TRELLO_TOKEN - Trello API token
+#   HUBOT_TRELLO_BOARD - The ID of the Trello board you will be working with
 #
 # Commands:
-#   hubot trello all the users - which users do we know about trello for
-#   hubot trello get token - provides instructions on acquiring a token
-#   hubot trello set token <token> - set the authentication token
-#   hubot trello forget me - deletes the authentication token
-#   hubot trello boards - list your trello boards
-#   hubot trello set my board to <board> - set your default board
-#   hubot trello lists - list your trello lists on the default board
-#   hubot trello set my list to <list> - set your default list
-#   hubot trello me <message> - add a new card to your default list
+#   hubot trello new "<list>" <name> - Create a new Trello card in the list
+#   hubot trello list "<list>" - Show cards on list
+#   hubot trello move <shortLink> "<list>" - Move a card to a different list
 #
-# Notes:
-#   Currently cards can only be added to your default list/board although
-#   this can be changed
 #
 # Author:
-#   beezly
+#   jared barboza <jared.m.barboza@gmail.com>
+
+board = {}
+lists = {}
+
+Trello = require 'node-trello'
+
+trello = new Trello process.env.HUBOT_TRELLO_KEY, process.env.HUBOT_TRELLO_TOKEN
+
+# verify that all the environment vars are available
+ensureConfig = (out) ->
+  out "Error: Trello app key is not specified" if not process.env.HUBOT_TRELLO_KEY
+  out "Error: Trello token is not specified" if not process.env.HUBOT_TRELLO_TOKEN
+  out "Error: Trello board ID is not specified" if not process.env.HUBOT_TRELLO_BOARD
+  return false unless (process.env.HUBOT_TRELLO_KEY and process.env.HUBOT_TRELLO_TOKEN and process.env.HUBOT_TRELLO_BOARD)
+  true
+
+##############################
+# API Methods
+##############################
+
+createCard = (msg, list_name, cardName) ->
+  msg.reply "Sure thing boss. I'll create that card for you."
+  ensureConfig msg.send
+  id = lists[list_name.toLowerCase()].id
+  trello.post "/1/cards", {name: cardName, idList: id}, (err, data) ->
+    msg.reply "There was an error creating the card" if err
+    msg.reply "OK, I created that card for you. You can see it here: #{data.url}" unless err
+
+showCards = (msg, list_name) ->
+  msg.reply "Looking up the cards for #{list_name}, one sec."
+  ensureConfig msg.send
+  id = lists[list_name.toLowerCase()].id
+  msg.send "I couldn't find a list named: #{list_name}." unless id
+  if id
+    trello.get "/1/lists/#{id}", {cards: "open"}, (err, data) ->
+      msg.reply "There was an error showing the list." if err
+      msg.reply "Here are all the cards in #{data.name}:" unless err and data.cards.length == 0
+      msg.send "* [#{card.shortLink}] #{card.name} - #{card.shortUrl}" for card in data.cards unless err and data.cards.length == 0
+      msg.reply "No cards are currently in the #{data.name} list." if data.cards.length == 0 and !err
+
+moveCard = (msg, card_id, list_name) ->
+  ensureConfig msg.send
+  id = lists[list_name.toLowerCase()].id
+  msg.reply "I couldn't find a list named: #{list_name}." unless id
+  if id
+    trello.put "/1/cards/#{card_id}/idList", {value: id}, (err, data) ->
+      msg.reply "Sorry boss, I couldn't move that card after all." if err
+      msg.reply "Yep, ok, I moved that card to #{list_name}." unless err
 
 module.exports = (robot) ->
-  Trello = require 'node-trello'
+  # fetch our board data when the script is loaded
+  ensureConfig console.log
+  trello.get "/1/boards/#{process.env.HUBOT_TRELLO_BOARD}", (err, data) ->
+    board = data
+    trello.get "/1/boards/#{process.env.HUBOT_TRELLO_BOARD}/lists", (err, data) ->
+      for list in data
+        lists[list.name.toLowerCase()] = list
 
-  trello_key = process.env.HUBOT_TRELLO_KEY
+  robot.respond /trello new ["'](.+)["']\s(.*)/i, (msg) ->
+    ensureConfig msg.send
+    card_name = msg.match[2]
+    list_name = msg.match[1]
 
-  robot.respond /trello all the users/i, (msg) ->
-    theReply = "Here is who I know:\n"
+    if card_name.length == 0
+      msg.reply "You must give the card a name"
+      return
 
-    for own key, user of robot.brain.data.users
-      if(user.trellotoken)
-        theReply += user.name + "\n"
+    if list_name.length == 0
+      msg.reply "You must give a list name"
+      return
+    return unless ensureConfig()
 
-    msg.send theReply
+    createCard msg, list_name, card_name
 
-  robot.respond /trello get token/, (msg) ->
-    msg.send "Get a token from https://trello.com/1/connect?key=#{trello_key}&name=cicsbot&response_type=token&scope=read,write&expiration=never"
-    msg.send "Then send it back to me as \"trello add token <token>\""
+  robot.respond /trello list ["'](.+)["']/i, (msg) ->
+    showCards msg, msg.match[1]
 
-  robot.respond /trello add token ([a-f0-9]+)/i, (msg) ->
-
-    trellotoken = msg.match[1]
-    msg.message.user.trellotoken = trellotoken
-    msg.send "Ok, your token is registered"
-
-  robot.respond /trello forget me/i, (msg) ->
-    user = msg.message.user
-    user.trellotoken  = null
-
-    msg.reply("Ok, I have no idea who you are anymore.")
-
-  robot.respond /trello boards/i, (msg) ->
-    user = msg.message.user
-    trellotoken = msg.message.user.trellotoken
-    t = new Trello trello_key, trellotoken
-    t.get '/1/members/me/boards/', (err,data) ->
-      console.log board for board in data
-      msg.send board.name for board in data
-
-  robot.respond /trello set my board to (.*)/i, (msg) ->
-    board_name = msg.match[1]
-    user = msg.message.user
-    trellotoken = msg.message.user.trellotoken
-    t = new Trello trello_key, trellotoken
-    t.get '/1/members/me/boards/', (err, data) ->
-      for board in data
-        if board.name == board_name
-          user.trelloboard = board.id
-          msg.reply "Your trello board is set to #{board.name}"
-
-  robot.respond /trello lists/i, (msg) ->
-    user = msg.message.user
-    trellotoken = user.trellotoken
-    trelloboard = user.trelloboard
-    t = new Trello trello_key, trellotoken
-    if !trellotoken
-      msg.reply "You have no trellotoken"
-    else if !trelloboard
-      msg.reply "You have no trelloboard"
-    else
-      t.get "/1/boards/#{trelloboard}/lists", (err, data) ->
-        msg.send list.name for list in data
-        
-   robot.respond /trello cards/i, (msg) ->
-    user = msg.message.user
-    trellotoken = user.trellotoken
-    trelloboard = user.trelloboard
-    t = new Trello trello_key, trellotoken
-    if !trellotoken
-      msg.reply "You have no trellotoken"
-    else if !trelloboard
-      msg.reply "You have no trelloboard"
-    else
-      t.get "GET /1/lists/#{trellolist}", (err, data) ->
-        msg.send list.name for list in data
-
-
-   robot.respond /trello set my list to (.*)/i, (msg) ->
-     list_name = msg.match[1]
-     user = msg.message.user
-     trellotoken = user.trellotoken
-     trelloboard = user.trelloboard
-     t = new Trello trello_key, trellotoken
-     if !trellotoken
-       msg.reply "You have no trellotoken"
-     else if !trelloboard
-       msg.reply "You have no trelloboard"
-     else
-       t.get "/1/boards/#{trelloboard}/lists", (err, data) ->
-         for list in data
-           if list.name == list_name
-             user.trellolist = list.id
-             msg.reply "Your trello list is set to #{list.name}"
-
-  robot.respond /trello me (.*)/i, (msg) ->
-    content = msg.match[1]
-    user = msg.message.user
-    trelloboard = user.trelloboard
-    trellotoken = user.trellotoken
-    trellolist = user.trellolist
-    if !trellotoken
-      msg.reply "You don't seem to have a trello token registered. Use \"trello get token\"."
-    else if !trelloboard
-      msg.reply "You don't seem to have a default trello board configured. Use \"trello my board is\" to do that"
-    else if !trellolist
-      msg.reply "You don't seem to have a default trello list configured. Use \"trello my list is \" to do that"
-    else
-      t = new Trello trello_key, trellotoken
-      t.post "/1/lists/#{trellolist}/cards", { name: content }, (err, data) ->
-        msg.reply "Added to your list - #{data.url}"
+  robot.respond /trello move (\w+) ["'](.+)["']/i, (msg) ->
+    moveCard msg, msg.match[1], msg.match[2]
