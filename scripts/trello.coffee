@@ -65,7 +65,7 @@ module.exports = (robot) ->
 
   trello = new Trello process.env.HUBOT_TRELLO_API_KEY, process.env.HUBOT_TRELLO_API_TOKEN
 
-  robot.respond /trell me ?(.+)?/i, (msg) ->
+  robot.respond /trello me ?(.+)?/i, (msg) ->
     label = msg.match[1]
 
     # Get trello cards
@@ -83,6 +83,8 @@ module.exports = (robot) ->
       if cards.length == 0
         msg.send "今ランチやってるお店はないなぁ〜"
         return
+
+      card = cards
 
       # Get attachments
       trello.get "/1/cards/#{card.id}/attachments", {cards: "open"}, (err, attachments) ->
