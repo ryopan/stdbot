@@ -35,6 +35,14 @@ checkEnv = (logger) ->
   return false if not (process.env.HUBOT_TRELLO_API_KEY and process.env.HUBOT_TRELLO_API_TOKEN and process.env.HUBOT_TRELLO_BOARD)
   return true
 
+# Select cards specified by label
+selectCardsByLabel = (cards, label) ->
+  selectedCards = []
+  for card in cards
+    for cLabel in card.labels
+      selectedCards.push(card) if cLabel.name == label
+  return selectedCards
+
 # hubot main
 module.exports = (robot) ->
   return if !checkEnv robot.logger
