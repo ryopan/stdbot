@@ -65,7 +65,7 @@ module.exports = (robot) ->
 
   trello = new Trello process.env.HUBOT_TRELLO_API_KEY, process.env.HUBOT_TRELLO_API_TOKEN
 
-  robot.respond /trello me ?(.+)?/i, (msg) ->
+  robot.respond /trell me ?(.+)?/i, (msg) ->
     label = msg.match[1]
 
     # Get trello cards
