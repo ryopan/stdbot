@@ -42,8 +42,8 @@
     "easy-table": ">= 1.0.x",
     "moment": ">= 2.10.x",
     "request": ">= 2.62.x",
-    "node-trello": ">= 1.1.x"
-    "hubot-qiita": "~0.1.1",
+    "node-trello": ">= 1.1.x",
+    "hubot-qiita": "~0.1.1"
   },
   "engines": {
     "node": "0.10.x"
