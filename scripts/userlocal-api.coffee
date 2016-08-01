@@ -10,12 +10,12 @@ module.exports = (robot) ->
         res
         .http('https://chatbot-api.userlocal.jp/api/chat')
         .headers('Content-Type': 'application/json')
-        .post(JSON.stringify({ message: message, key: process.env.sample})) (err, response, body) ->
+        .post(JSON.stringify({ message: message, key: sample})) (err, response, body) ->
             chatmsg = JSON.parse(body).result
             res
             .http('https://chatbot-api.userlocal.jp/api/character')
             .headers('Content-Type': 'application/json')
-            .post(JSON.stringify({ message: chatmsg, key: process.env.sample, character_type: "cat"})) (err, response, body) ->
+            .post(JSON.stringify({ message: chatmsg, key: sample, character_type: "cat"})) (err, response, body) ->
                 res.send JSON.parse(body).result
 
     robot.respond /(.*)/i, (msg) ->
